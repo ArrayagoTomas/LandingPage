@@ -55,6 +55,9 @@
       padding: 5rem 2rem;
       background: linear-gradient(to bottom right, #fff, #0097b2);
     }
+   .products h2{
+      color: #fff;
+    }
     .producto {
       display: flex;
       flex-direction: column;
@@ -125,4 +128,5 @@
     }
     .temporizador p{
       color: #fff;
+
     }
