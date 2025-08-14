@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AirClean</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilo.css">
+  
+</head>
+<body>
+  <header>
+    <div><strong>AirClean</strong></div>
+    <nav>
+      <a href="#productos">Productos</a>
+      <a href="#log">Logueate</a>
+      <a href="#footer">Contacto</a>
+    </nav>
+  </header> 
+  
+   <section class="titulo">
+    <h1></h1>
+  </section> 
+   <section id="productos" class="productos">
+    <div class="producto">
+      <picture>
+      <source media="(min-width: 768px)" srcset="A.jpg">
+      <img  class="banner" src="B.jpg" alt="Ya llega! Más de 100.000 productos">
+      </picture>
+      <h2>NevaAir</h2>
+      <p>¡NUEVO MODELO! Mas potente y con mejores ventiladores.</p>
+    </div>
+    <div class="producto">
+      <img src="CM.jpg" alt="Modelo CM">
+      <h2>CoolMaster</h2>
+      <p>Version mas accesible que el NevaAir pero con un poco menos de potencia.</p>
+    </div>
+  </section>  
+  <section id="log" class="products">
+    <h2>Suscribite para recibir novedades</h2>
+    <div class="log">
+      <input type="email" placeholder="Tu correo electrónico">
+    </div>
+  </section>  <section id="products" class="products">
+    <div class="temporizador">
+      <p>La oferta termina en:</p>
+      <div id="timer">00d : 00h : 00m : 00s</div>
+  </section>  <section id="faq" class="faq-section">
+    <h2>Preguntas Frecuentes</h2>
+    <div class="faq">
+      <h3>¿Cuánto tarda el envío?</h3>
+      <p>El envío puede demorar entre 10 y 20 días hábiles dependiendo de su localidad.</p>
+    </div>
+    <div class="faq">
+      <h3>¿Qué métodos de pago aceptan?</h3>
+      <p>Aceptamos tarjetas de crédito, débito, transferencias bancarias y pagos digitales como MercadoPago (MercadoPago en un unico pago).</p>
+    </div>
+    <div class="faq">
+      <h3>¿Ofrecen garantía?</h3>
+      <p>Sí, todos nuestros productos tienen una garantía de 6 meses contra fallas de fábrica.</p>
+    </div>
+    <div class="faq">
+      <h3>¿Tienen alguna red o numero para contactar?</h3>
+      <p>Sí, nuestro numero de telefono es 223 555-9381.</p>
+      <p>O por nuestras redes, Instagram o Facebook. En ambas nos encuentran como AirClean.</p>
+    </div>
+  </section> 
+   <script>
+    const temporizador = new Date("2025-08-10T00:00:00").getTime();
+
+    const timerElement = document.getElementById("timer");
+
+    const tempnuevo = () => {
+      const now = new Date().getTime();
+      const distance = temporizador - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      timerElement.textContent =
+        `${days}d : ${hours.toString().padStart(2, '0')}h : ${minutes.toString().padStart(2, '0')}m : ${seconds.toString().padStart(2, '0')}s`;
+
+      if (distance < 0) {
+        timerElement.textContent = "¡La oferta ha terminado!";
+      }
+    };
+
+    tempnuevo();
+    setInterval(tempnuevo, 1000);
+  </script> 
+  <footer id="footer">
+    <p>2025 derechos de autor .</p>
+    <p>Hecho por Arrayago y Cristobal.</p>
+  </footer>
+</body>
+</html>
